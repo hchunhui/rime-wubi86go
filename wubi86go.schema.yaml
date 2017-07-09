@@ -4,7 +4,7 @@
 schema:
   schema_id: wubi86go
   name: "谷歌五笔86"
-  version: "0.9"
+  version: "0.1"
   author:
     - 发明人 王永民先生
   description: |
@@ -32,7 +32,6 @@ engine:
     - selector
     - navigator
     - express_editor
-#    - fluency_editor
   segmentors:
     - ascii_segmentor
     - matcher
@@ -42,17 +41,7 @@ engine:
   translators:
     - punct_translator
     - reverse_lookup_translator
-    - table_translator@fixed
     - table_translator
-  filters:
-    - uniquifier
-    - single_char_filter
-
-fixed:
-  dictionary: wubi86go
-  enable_user_dict: false
-  enable_completion: false
-  initial_quality: 1000
 
 speller:
   delimiter: " ;'"
@@ -61,9 +50,7 @@ speller:
 
 translator:
   dictionary: wubi86go
-  enable_sentence: true
-  enable_encoder: true
-  encode_commit_history: true
+  enable_user_dict: false
   max_phrase_length: 4
   disable_user_dict_for_patterns:
     - "^z.*$"
@@ -88,4 +75,3 @@ recognizer:
   import_preset: default
   patterns:
     reverse_lookup: "^z[a-z]*'?$"
-
