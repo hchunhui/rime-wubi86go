@@ -36,38 +36,55 @@ engine:
     - ascii_segmentor
     - matcher
     - abc_segmentor
+    - affix_segmentor@pinyin_segmentor
     - punct_segmentor
     - fallback_segmentor
   translators:
     - punct_translator
-    - reverse_lookup_translator
+    - script_translator@pinyin
     - table_translator
     - table_translator@words
+  filters:
+    - reverse_lookup_filter@wubi_reverse_lookup
+    - reverse_lookup_filter@wubi_words_reverse_lookup
+    - reverse_lookup_filter@pinyin_reverse_lookup
 
 speller:
   delimiter: " ;'"
   max_code_length: 4
+  algebra:
+    - derive/^(...).$/$1z/
+    - derive/^(..).(.*)$/$1z$2/
+    - derive/^(.).(.*)$/$1z$2/
+    - derive/^.(...)$/z$1/
 #  auto_select: true
+
+pinyin_segmentor:
+  tag: pinyin
+  prefix: "`"
+  suffix: "'"
+  tips: 〔拼音〕
+  closing_tips: 〔五笔〕
+  extra_tags:
+    - wubi_comment
 
 translator:
   dictionary: wubi86go
   enable_user_dict: false
   max_phrase_length: 4
   disable_user_dict_for_patterns:
-    - "^z.*$"
+    - "^.*z.*$"
 
 words:
   dictionary: wubi86gow
   enable_user_dict: false
   max_phrase_length: 4
   disable_user_dict_for_patterns:
-    - "^z.*$"
+    - "^.*z.*$"
 
-reverse_lookup:
+pinyin:
+  tag: pinyin
   dictionary: pinyin_simp
-  prefix: "z"
-  suffix: "'"
-  tips: 〔拼音〕
   preedit_format:
     - xform/([nl])v/$1ü/
     - xform/([nl])ue/$1üe/
@@ -82,4 +99,28 @@ key_binder:
 recognizer:
   import_preset: default
   patterns:
-    reverse_lookup: "^z[a-z]*'?$"
+    pinyin: "^`[a-z]*'?$"
+    wubi_comment: "^[a-z]*z[a-z]*$"
+    pinyin_comment: "^[a-y]*$"
+
+wubi_reverse_lookup:
+  tags: [ wubi_comment ]
+  dictionary: wubi86go
+  comment_format:
+    - xform/^/ /
+
+wubi_words_reverse_lookup:
+  tags: [ wubi_comment ]
+  dictionary: wubi86gow
+  comment_format:
+    - xform/^/ /
+
+pinyin_reverse_lookup:
+  tags: [ pinyin_comment ]
+  dictionary: pinyin_simp
+  comment_format:
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+    - xform/^/ (/
+    - xform/$/)
