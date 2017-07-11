@@ -2,8 +2,8 @@
 # encoding: utf-8
 
 schema:
-  schema_id: wubi86go
-  name: "谷歌五笔86"
+  schema_id: wubi86gow
+  name: "谷歌五笔86词"
   version: "0.1"
   author:
     - 发明人 王永民先生
@@ -40,9 +40,7 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
-    - reverse_lookup_translator
     - table_translator
-    - table_translator@words
 
 speller:
   delimiter: " ;'"
@@ -50,28 +48,11 @@ speller:
 #  auto_select: true
 
 translator:
-  dictionary: wubi86go
-  enable_user_dict: false
-  max_phrase_length: 4
-  disable_user_dict_for_patterns:
-    - "^z.*$"
-
-words:
   dictionary: wubi86gow
   enable_user_dict: false
   max_phrase_length: 4
   disable_user_dict_for_patterns:
     - "^z.*$"
-
-reverse_lookup:
-  dictionary: pinyin_simp
-  prefix: "z"
-  suffix: "'"
-  tips: 〔拼音〕
-  preedit_format:
-    - xform/([nl])v/$1ü/
-    - xform/([nl])ue/$1üe/
-    - xform/([jqxy])v/$1u/
 
 punctuator:
   import_preset: default
@@ -81,5 +62,3 @@ key_binder:
 
 recognizer:
   import_preset: default
-  patterns:
-    reverse_lookup: "^z[a-z]*'?$"
