@@ -37,6 +37,7 @@ engine:
     - matcher
     - abc_segmentor
     - affix_segmentor@pinyin_segmentor
+    - affix_segmentor@wubi_comment_segmentor
     - punct_segmentor
     - fallback_segmentor
   translators:
@@ -65,6 +66,13 @@ pinyin_segmentor:
   suffix: "'"
   tips: 〔拼音〕
   closing_tips: 〔五笔〕
+  extra_tags:
+    - wubi_comment
+
+wubi_comment_segmentor:
+  prefix: "zzzz"
+  suffix: "'"
+  tips: 〔查〕
   extra_tags:
     - wubi_comment
 
