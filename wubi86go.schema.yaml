@@ -57,7 +57,7 @@ speller:
     - derive/^(...).$/$1z/
     - derive/^(..).(.*)$/$1z$2/
     - derive/^(.).(.*)$/$1z$2/
-    - derive/^.(...)$/z$1/
+    - derive/^.(.*)$/z$1/
 #  auto_select: true
 
 pinyin_segmentor:
@@ -109,7 +109,7 @@ recognizer:
   patterns:
     pinyin: "^`[a-z]*'?$"
     wubi_comment: "^[a-z]*z[a-z]*$"
-    pinyin_comment: "^[a-y]*$"
+    pinyin_comment: "^[a-y]?[a-y]?[a-y]?[a-y]?$"
 
 wubi_reverse_lookup:
   tags: [ wubi_comment ]
