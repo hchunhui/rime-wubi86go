@@ -99,7 +99,7 @@ pinyin:
     - xform/([jqxy])v/$1u/
 
 punctuator:
-  import_preset: default
+  import_preset: symbols
 
 key_binder:
   import_preset: default
@@ -107,6 +107,7 @@ key_binder:
 recognizer:
   import_preset: default
   patterns:
+    punct: "^/([0-9]+[a-z]*|[a-z]+)$"
     pinyin: "^`[a-z]*'?$"
     wubi_comment: "^[a-z]*z[a-z]*$"
     pinyin_comment: "^[a-y]?[a-y]?[a-y]?[a-y]?$"
