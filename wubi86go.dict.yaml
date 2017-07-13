@@ -1230,6 +1230,7 @@ encoder:
 巴	cnh
 马	cnn
 厶	cny
+龴	cny
 遤	cpi
 驼	cpx
 駝	cpx
@@ -1321,6 +1322,7 @@ encoder:
 戌	dgn
 厂	dgt
 丆	dgt
+𠂇	dgt
 砰	dgu
 威	dgv
 存	dhb
@@ -1432,6 +1434,7 @@ encoder:
 奉	dwf
 奏	dwg
 仄	dwi
+𡗗	dwi
 春	dwj
 秦	dwt
 雁	dww
@@ -1587,8 +1590,10 @@ encoder:
 腑	eyw
 臃	eyx
 堪	fad
+𢦏	fae
 霸	faf
 卋	faf
+𢦏	fai
 卉	faj
 哉	fak
 载	fal
@@ -1659,6 +1664,7 @@ encoder:
 刊	fjh
 刌	fjh
 亓	fjj
+龺	fjj
 井	fjk
 塌	fjn
 进	fjp
@@ -2163,6 +2169,7 @@ encoder:
 淡	ioo
 洣	ioy
 学	ipb
+龸	ipb
 浓	ipe
 尝	ipf
 演	ipg
@@ -4200,6 +4207,7 @@ encoder:
 笑	ttd
 笔	ttf
 竹	ttg
+𠂉	ttg
 禾	ttt
 秝	tty
 箭	tue
@@ -4272,6 +4280,7 @@ encoder:
 减	udg
 着	udh
 头	udi
+龹	udi
 羊	udj
 羞	udn
 送	udp
@@ -5680,6 +5689,7 @@ encoder:
 莆	agey
 芋	agfj
 廿	aghg
+龷	aghg
 艹	aghh
 卄	aghh
 蔫	agho
@@ -9557,6 +9567,7 @@ encoder:
 璷	gget
 玗	ggfh
 王	gggg
+龶	gggg
 戋	gggt
 璱	gggt
 戋	gggy
@@ -14939,6 +14950,7 @@ encoder:
 乚	nnll
 乛	nnll
 ⺄	nnll
+𠃌	nnll
 繠	nnni
 惯	nnnm
 已	nnnn
@@ -15469,6 +15481,7 @@ encoder:
 爃	ooos
 焱	ooou
 歘	ooow
+𤇾	oopb
 褮	oope
 膋	oope
 煢	oopf
@@ -18758,6 +18771,7 @@ encoder:
 揰	rtgf
 手	rtgh
 挿	rtgh
+龵	rtgt
 搝	rthd
 拃	rthf
 皥	rthf
@@ -24395,6 +24409,7 @@ encoder:
 彎	xyxx
 弦	xyxy
 絃	xyxy
+龻	xyxy
 毑	xyyb
 袰	xyye
 母	xyyi
@@ -25413,6 +25428,7 @@ encoder:
 臠	yxxw
 彎	yxxx
 譏	yxxy
+龻	yxxy
 孶	yxyb
 玆	yxyx
 誸	yxyx
